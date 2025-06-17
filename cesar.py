@@ -22,7 +22,7 @@ def cifrar_cesar(texto, desplazamiento):
             
     return resultado
 
-def mostrar_todas_las_combinaciones(texto):
+def show_caesar(texto):
     """
     Función para mostrar todas las combinaciones posibles del cifrado César.
     """
@@ -37,5 +37,5 @@ def mostrar_todas_las_combinaciones(texto):
 
 # Ejemplo de uso
 texto_ejemplo = "Inserte Texto"
-mostrar_todas_las_combinaciones(texto_ejemplo)
+show_caesar(texto_ejemplo)
 
