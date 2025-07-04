@@ -21,3 +21,22 @@ def rainbow():
 		print(colored[i] + "Hello World!" + Color.end)
 		i += 1
 		time.sleep(0.1)
+
+#Parsing Tools
+""" Parsing  4x4 matrix from/to  16-Bytes Array"""
+def bytes2matrix(text):
+    """ Converts a 16-byte array into a 4x4 matrix.  """
+    return [list(text[i:i+4]) for i in range(0, len(text), 4)]
+
+def matrix2bytes(matrix):
+    """ Converts a 4x4 matrix into a 16-byte array.  """
+    return bytes([matrix[row][col] for row in range(4) for col in range(4)])
+
+#Basic Encriptings
+
+#XOR
+def xor_encrypt(data: bytes, key: bytes) -> bytes:
+    key = (key * (len(data) // len(key) + 1))[:len(data)]  # Repite la clave para igualar la longitud
+    return bytes([b ^ k for b, k in zip(data, key)])
+
+#Cesar
