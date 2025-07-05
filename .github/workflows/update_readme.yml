@@ -1,0 +1,18 @@
+name: Actualizar README
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Se ejecuta cada hora
+  workflow_dispatch:     # También permite lanzarlo manualmente
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3   # Clona el repositorio
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Ejecutar script
+        run: python update_readme.py
